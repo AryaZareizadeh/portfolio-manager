@@ -1,0 +1,14 @@
+.venv/
+.venv-kronos/
+.kronos-deps/
+models/
+__pycache__/
+*.py[cod]
+.pytest*/
+.test-tmp/
+build/
+dist/
+*.egg-info/
+data/
+runs/
+.dashboard/

@@ -1,0 +1,29 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "crypto-forecast-research"
+version = "0.2.0"
+description = "Leakage-aware deep learning forecasts for selected spot cryptocurrencies"
+requires-python = ">=3.11"
+dependencies = ["numpy>=1.26,<3", "pandas>=2.2,<3", "torch>=2.6,<3"]
+
+[project.optional-dependencies]
+test = ["pytest>=8,<10"]
+kronos = ["huggingface_hub>=0.33,<1", "einops>=0.8,<1", "safetensors>=0.4,<1", "tqdm>=4.66,<5"]
+
+[project.scripts]
+crypto-forecast = "crypto_forecast.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["crypto_forecast*"]
+
+[tool.setuptools.package-data]
+crypto_forecast = ["web/*.html", "web/*.css", "web/*.js", "web/vendor/lightweight-charts/*.js", "web/vendor/lightweight-charts/LICENSE", "web/vendor/lightweight-charts/NOTICE", "web/vendor/lightweight-charts/UPSTREAM.md"]
+"crypto_forecast._vendor.kronos" = ["LICENSE", "UPSTREAM.md"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+cache_dir = ".test-tmp/pytest-cache"

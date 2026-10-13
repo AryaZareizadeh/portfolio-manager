@@ -1,0 +1,23 @@
+{
+  "coins": ["BTC", "ETH", "SOL", "XRP", "ADA"],
+  "start": "2021-01-01",
+  "end": null,
+  "data_dir": "data",
+  "run_dir": "runs/multiframe-coins",
+  "input_mode": "multiframe",
+  "model_type": "gru",
+  "origin_interval": "4h",
+  "lookback": 60,
+  "hidden_size": 48,
+  "epochs": 60,
+  "patience": 10,
+  "batch_size": 128,
+  "learning_rate": 0.001,
+  "lr_scheduler": "warmup_cosine",
+  "lr_min_ratio": 0.1,
+  "lr_warmup_fraction": 0.05,
+  "train_fraction": 0.7,
+  "validation_fraction": 0.15,
+  "seed": 42,
+  "device": "auto"
+}
